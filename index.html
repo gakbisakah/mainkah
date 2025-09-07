@@ -1,0 +1,988 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tabel Video Edukasi</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- Jika Anda ingin menggunakan satu file saja, salin isi styles.css yang ada di bagian bawah file ini
+       ke berkas terpisah bernama styles.css atau hapus tag <link> dan lekatkan blok <style> di bawah ke <head>. -->
+  <style>
+  /* ===== styles.css (jika ingin terpisah, pindahkan seluruh blok ini ke styles.css) ===== */
+  :root{
+    --bg:#f6f8fb;
+    --card:#ffffff;
+    --muted:#6b7280;
+    --accent:#0f62fe;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    font-family:Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    background: linear-gradient(180deg,var(--bg) 0%, #ffffff 100%);
+    color:#0f172a;
+    padding:28px;
+    -webkit-font-smoothing:antialiased;
+  }
+  .container{
+    max-width:1200px;
+    margin:0 auto;
+    background:var(--card);
+    border-radius:12px;
+    box-shadow:0 6px 18px rgba(12,23,52,0.08);
+    padding:20px;
+    border:1px solid rgba(15,20,40,0.03);
+  }
+  header{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:16px}
+  h1{font-size:20px;margin:0}
+  .controls{display:flex;gap:8px;align-items:center}
+  .search{display:inline-flex;align-items:center;background:#f3f4f6;border-radius:8px;padding:6px 8px}
+  .search input{border:0;background:transparent;outline:none;width:260px;font-size:14px}
+  .table-wrap{overflow:auto;border-radius:8px;border:1px solid rgba(15,20,40,0.04)}
+  table{border-collapse:collapse;width:100%;min-width:1100px}
+  thead th{position:sticky;top:0;background:linear-gradient(180deg,#ffffff,#fbfdff);z-index:2;padding:12px 10px;text-align:left;font-size:13px;border-bottom:1px solid rgba(15,20,40,0.06)}
+  tbody td{padding:10px;border-bottom:1px solid rgba(15,20,40,0.04);vertical-align:top;font-size:13px}
+  tbody tr:nth-child(even){background:linear-gradient(90deg,rgba(15,20,40,0.01),transparent)}
+  .small{font-size:12px;color:var(--muted)}
+  .tag{display:inline-block;padding:4px 8px;border-radius:999px;background:rgba(15,98,254,0.06);color:var(--accent);font-weight:600;font-size:12px}
+  .like{font-weight:700;color:#0b6b2b}
+  .dislike{font-weight:700;color:#aa1f1f}
+  /* Responsive tweaks */
+  @media (max-width:900px){
+    .search input{width:120px}
+    table{min-width:900px}
+  }
+  @media (max-width:640px){
+    body{padding:14px}
+    .container{padding:12px}
+    thead th{font-size:12px}
+    tbody td{font-size:12px}
+  }
+  /* optional print styles */
+  @media print{
+    body{background:white}
+    .container{box-shadow:none;border:none}
+  }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Tabel Video Edukasi — Ringkasan & Observasi</h1>
+      <div class="controls">
+        <div class="search" title="Cari di seluruh tabel">
+          🔎 <input id="search" placeholder="Cari kata kunci, judul, atau alasan..." />
+        </div>
+      </div>
+    </header>
+
+    <div class="table-wrap">
+      <table id="videoTable" aria-label="Tabel Video Edukasi">
+        <thead>
+          <tr>
+            <th style="width:42px">No</th>
+            <th>Judul Video</th>
+            <th>Edukasi</th>
+            <th>Pengetahuan</th>
+            <th>Pembelajaran</th>
+            <th>Sensorik &amp; Pemahaman</th>
+            <th>Perkembangan</th>
+            <th>Pola Pikir</th>
+            <th>Kata Kunci</th>
+            <th>Suka/Tidak</th>
+            <th>Alasan</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- 1 -->
+          <tr>
+            <td>1</td>
+            <td>Watching Planes Take Off at Silangit Airport | Menyaksikan Pesawat Take Off di Bandara Silangit</td>
+            <td>Mengajarkan rasa ingin tahu, disiplin, serta pentingnya keselamatan di bandara</td>
+            <td>Mengetahui jenis pesawat (Super Air Jet vs Batik Air), proses boarding, pendorong pesawat, menara kontrol, pagar bandara, serta alasan pengamanan</td>
+            <td>Belajar menghargai proses penerbangan, pentingnya izin/tiket, serta perbedaan transportasi darat &amp; udara</td>
+            <td>Visual pesawat di landasan, suara mesin jet, percakapan opung-cucu, pemandangan luar bandara, pagar berduri, dan suara suasana sekitar</td>
+            <td>Mengembangkan rasa ingin tahu, kemampuan observasi, serta kepekaan terhadap aturan &amp; keselamatan publik</td>
+            <td>Melatih berpikir logis (kenapa pesawat perlu pemanasan), analitis (fungsi sayap), serta imajinatif (membandingkan burung &amp; pesawat)</td>
+            <td>Bandara Silangit, Super Air Jet, Batik Air, pesawat, penerbangan, Opung, Natanael, tiket, take off, Batak</td>
+            <td class="like">Suka 👍</td>
+            <td>Karena video ini unik: menampilkan suasana asli bandara, obrolan ringan penuh humor, dan pengetahuan tentang penerbangan</td>
+          </tr>
+          <!-- 2 -->
+          <tr>
+            <td>2</td>
+            <td>Aktivitas Outdoor &amp; Sosialisasi Anak</td>
+            <td>Mengenalkan interaksi sosial, kerja sama, pengamatan lingkungan, dan pembelajaran berbasis pengalaman</td>
+            <td>Nama-nama Alkitab, pegunungan sekitar, konsep koordinasi dalam permainan dan aktivitas fisik</td>
+            <td>Anak-anak belajar bersepeda, bermain layangan, mengenal teman sebaya, mengamati lingkungan</td>
+            <td>Interaksi sosial, penglihatan terhadap pemandangan, kontrol motorik halus dan kasar</td>
+            <td>Mengembangkan kemampuan bersosialisasi, koordinasi fisik, keberanian, dan rasa tanggung jawab</td>
+            <td>Melatih berpikir observatif, kerja sama, pengambilan keputusan, serta pemahaman lingkungan</td>
+            <td>Sosialisasi, outdoor, bermain, layangan, sepeda, koordinasi, pengamatan, Alkitab</td>
+            <td class="like">Suka 👍</td>
+            <td>Memberikan pengalaman belajar aktif di luar kelas, menggabungkan bermain, sosial, dan observasi</td>
+          </tr>
+          <!-- 3 -->
+          <tr>
+            <td>3</td>
+            <td>Jalan-jalan Sore di Balige &amp; Suasana Pasar Tradisional</td>
+            <td>Mengajarkan pentingnya mengenal budaya lokal, interaksi sosial, dan ekonomi rakyat</td>
+            <td>Mengetahui aktivitas masyarakat Balige, suasana pasar, jenis barang dagangan, serta budaya tawar-menawar</td>
+            <td>Belajar cara berinteraksi dengan penjual, menghargai pekerjaan masyarakat, dan menjaga sopan santun di ruang publik</td>
+            <td>Visual pasar tradisional, suara ramai pedagang, aroma makanan khas, interaksi opung-cucu dengan warga sekitar</td>
+            <td>Mengembangkan keterampilan sosial, empati terhadap pekerjaan orang lain, serta rasa ingin tahu budaya lokal</td>
+            <td>Melatih berpikir kritis (kenapa harga bisa berbeda), logis (membandingkan kebutuhan vs keinginan), serta analitis (fungsi pasar bagi masyarakat)</td>
+            <td>Balige, pasar tradisional, opung, cucu, budaya Batak, tawar-menawar, ekonomi rakyat, makanan khas</td>
+            <td class="like">Suka 👍</td>
+            <td>Karena video ini memperlihatkan suasana nyata pasar tradisional yang penuh warna, edukatif, dan memperkaya wawasan budaya lokal</td>
+          </tr>
+          <!-- 4 -->
+          <tr>
+            <td>4</td>
+            <td>The Joy of the August 17th Celebration by FR Residents | Kemeriahan Perayaan 17 Agustus Penghuni FR</td>
+            <td>Mengajarkan nilai nasionalisme, kebersamaan, dan pentingnya tradisi</td>
+            <td>Wawasan tentang lomba tradisional, pertunjukan seni, serta makna simbolis pengibaran bendera</td>
+            <td>Belajar arti kerja sama, solidaritas, dan menjaga budaya lokal</td>
+            <td>Visual lomba, suara sorakan, nuansa khidmat pengibaran bendera, ekspresi kegembiraan masyarakat</td>
+            <td>Tradisi tahunan yang memperkuat ikatan sosial antarwarga</td>
+            <td>Menumbuhkan rasa syukur, cinta tanah air, gotong royong, kolaboratif</td>
+            <td>Kemerdekaan, 17 Agustus, nasionalisme, lomba tradisional, kebersamaan, solidaritas, budaya, bendera merah putih</td>
+            <td class="like">Suka 👍</td>
+            <td>Menampilkan kegembiraan penuh makna, memadukan hiburan dengan edukasi, menumbuhkan semangat nasionalisme dan solidaritas sosial</td>
+          </tr>
+          <!-- 5 -->
+          <tr>
+            <td>5</td>
+            <td>Belanja Bahan Tradisional &amp; Jajanan di Toba</td>
+            <td>Mengenalkan makanan khas Batak dan nilai ekonomi keluarga</td>
+            <td>Mengetahui perbedaan tepung beras &amp; ketan, fungsi daun pembungkus, serta nama jajanan tradisional (lapet, pohul-pohul, waji, dll.)</td>
+            <td>Belajar cara memilih bahan, membedakan kualitas, dan mengenal budaya kuliner lokal</td>
+            <td>Visual bentuk jajanan, suara interaksi pasar, aroma rempah, suasana belanja</td>
+            <td>Mengembangkan rasa ingin tahu, kemampuan memilih, serta kepekaan pada kearifan lokal</td>
+            <td>Melatih berpikir kritis (membedakan bahan), membandingkan harga, dan logis (menghitung kebutuhan belanja)</td>
+            <td>Lapet, pohul-pohul, tepung beras, tepung ketan, gula merah, waji, jahe, kacang, belanja pasar, tradisi</td>
+            <td class="like">Suka 👍</td>
+            <td>Karena video informatif, memperlihatkan pengalaman nyata belanja dan memperkenalkan jajanan tradisional yang unik</td>
+          </tr>
+          <!-- 6 -->
+          <tr>
+            <td>6</td>
+            <td>Pemindahan Gajebo STM Fatimah Regensi untuk Markas</td>
+            <td>Mengajarkan gotong royong, solidaritas, dan strategi kerja sama</td>
+            <td>Mengetahui cara memindahkan gajebo manual dengan tenaga bersama serta strategi menentukan lokasi baru</td>
+            <td>Belajar arti kebersamaan, koordinasi, serta kepemimpinan saat mengatur kerja kelompok</td>
+            <td>Visual gerakan angkat gajebo, suara musik, tawa, serta percakapan penuh kebersamaan</td>
+            <td>Mengembangkan keterampilan sosial, koordinasi fisik, serta komunikasi kelompok</td>
+            <td>Pola pikir strategis (cara memindahkan benda besar), kebersamaan, menentukan lokasi terbaik</td>
+            <td>Gajebo, STM Fatimah Regensi, gotong royong, kebersamaan, markas, pemindahan, kerja sama</td>
+            <td class="like">Suka 👍</td>
+            <td>Karena kegiatan penuh kekompakan, semangat positif, dan suasana penuh humor serta kebersamaan</td>
+          </tr>
+          <!-- 7 -->
+          <tr>
+            <td>7</td>
+            <td>Opung Menyaksikan Sepeda Laser &amp; Offroad Anak-anak</td>
+            <td>Mengajarkan kebersamaan keluarga, perhatian kakek (opung), dan kreativitas</td>
+            <td>Mengetahui inovasi sederhana (lampu laser sepeda) serta pengalaman offroad anak-anak</td>
+            <td>Belajar keberanian mencoba hal baru, pentingnya kreativitas, serta berbagi kegembiraan bersama keluarga</td>
+            <td>Visual sepeda laser, suara musik, tawa, komentar opung, serta aksi offroad penuh semangat</td>
+            <td>Mengembangkan rasa percaya diri, keberanian, dan kemampuan interaksi sosial</td>
+            <td>Melatih pola pikir kreatif (modifikasi sepeda), imajinatif (kecepatan 1000 km/jam), berpikir positif</td>
+            <td>Sepeda laser, offroad, opung, kebersamaan, kreativitas, keluarga, STM Fatimah Regensi</td>
+            <td class="like">Suka 👍</td>
+            <td>Karena videonya penuh keceriaan, unik dengan sepeda berlampu laser, serta momen hangat kebersamaan keluarga</td>
+          </tr>
+          <!-- 8 -->
+          <tr>
+            <td>8</td>
+            <td>Uji Coba Sepeda Laser &amp; Persiapan Lomba 17 Agustus</td>
+            <td>Mengajarkan disiplin, tanggung jawab, serta pentingnya persiapan sebelum lomba</td>
+            <td>Mengetahui cara uji coba sepeda laser, penggunaan kunci, serta makna bendera ganda pada sepeda</td>
+            <td>Belajar tanggung jawab membersihkan barang, menjaga milik sendiri, serta disiplin sebelum bermain</td>
+            <td>Visual sepeda laser, percakapan humor, suara musik, bongkar pasang, interaksi keluarga</td>
+            <td>Mengembangkan kedisiplinan, kreativitas, dan kemampuan sosial</td>
+            <td>Melatih pola pikir kritis (fungsi kunci, alasan bendera), tanggung jawab, serta berpikir solutif</td>
+            <td>Sepeda laser, lomba 17 Agustus, bongkar pasang, disiplin, tanggung jawab, kreativitas, keluarga</td>
+            <td class="like">Suka 👍</td>
+            <td>Karena video penuh nilai kebersamaan, humor khas keluarga, kreativitas sepeda unik, serta pesan disiplin anak</td>
+          </tr>
+          <!-- 9 -->
+          <tr>
+            <td>9</td>
+            <td>Senja Bersama Opung &amp; Sepeda Natanael di Fatimah</td>
+            <td>Mengajarkan arti kebersamaan keluarga, disiplin bersepeda, serta nilai lingkungan</td>
+            <td>Mengetahui alasan bersepeda sore hari (udara sejuk), arti bendera, perlunya lampu sepeda, serta obrolan lomba 17 Agustus</td>
+            <td>Belajar menghargai suasana sore, menjaga keselamatan, serta tradisi lomba rakyat</td>
+            <td>Visual senja, suara musik, tawa, percakapan opung-cucu, bunyi sepeda, suasana sekitar rumah</td>
+            <td>Mengembangkan kedisiplinan, rasa ingin tahu, serta kemampuan komunikasi sosial</td>
+            <td>Melatih berpikir kritis (kenapa sore nyaman), imajinatif (kecepatan 1000 km/jam), serta peka simbol (bendera, One Piece)</td>
+            <td>Senja, sepeda, opung, Fatimah, kebersamaan, udara sejuk, bendera, One Piece, lomba 17 Agustus, Shopee</td>
+            <td class="like">Suka 👍</td>
+            <td>Karena video menampilkan suasana hangat, pemandangan indah, obrolan ringan penuh makna, serta nuansa kekeluargaan</td>
+          </tr>
+          <!-- 10 -->
+          <tr>
+            <td>10</td>
+            <td>Menonton Lomba Balap Karung Anak-anak di Lapangan</td>
+            <td>Mengajarkan sportivitas, kegembiraan, dan tradisi permainan rakyat</td>
+            <td>Mengetahui aturan lomba balap karung, tantangan melompat, serta arti kebersamaan saat lomba rakyat</td>
+            <td>Belajar menerima kemenangan &amp; kekalahan dengan sportif, menjaga semangat, dan bermain sehat</td>
+            <td>Visual anak-anak melompat dalam karung, suara sorakan warga, musik riang, ekspresi gembira</td>
+            <td>Mengembangkan kepercayaan diri, keterampilan motorik, serta kepekaan pada nilai kejujuran</td>
+            <td>Melatih berpikir sportif (aturan lomba), logis (kenapa jatuh sering terjadi), serta analitis (cara menjaga keseimbangan)</td>
+            <td>Balap karung, lomba rakyat, anak-anak, olahraga, kebersamaan, tradisi, permainan 17 Agustus</td>
+            <td class="like">Suka 👍</td>
+            <td>Karena video penuh keceriaan anak-anak, menghidupkan tradisi permainan sederhana yang penuh makna sosial</td>
+          </tr>
+          <!-- 11 -->
+          <tr>
+            <td>11</td>
+            <td>Wisata ke Pantai Pasir Putih Parbaba di Samosir</td>
+            <td>Mengajarkan pentingnya menjaga alam, wisata edukatif, dan kebersamaan keluarga</td>
+            <td>Mengetahui keindahan Pantai Pasir Putih, aktivitas wisata (berenang, bermain pasir), serta budaya masyarakat sekitar Danau Toba</td>
+            <td>Belajar menjaga kebersihan lingkungan, menghargai keindahan alam, dan kebersamaan dalam wisata keluarga</td>
+            <td>Visual pasir putih, suara deburan ombak, aktivitas bermain air, panorama Danau Toba yang luas</td>
+            <td>Mengembangkan kepedulian lingkungan, rasa syukur atas ciptaan Tuhan, serta semangat rekreasi sehat</td>
+            <td>Melatih pola pikir ekologis (kenapa menjaga pantai penting), imajinatif (keindahan danau &amp; pantai), serta analitis (fungsi wisata untuk ekonomi lokal)</td>
+            <td>Pantai Pasir Putih, Parbaba, Samosir, Danau Toba, wisata, keluarga, kebersihan, budaya Batak</td>
+            <td class="like">Suka 👍</td>
+            <td>Karena video penuh pemandangan indah, suasana wisata yang menyenangkan, serta edukasi menjaga alam dan kebersihan</td>
+          </tr>
+          <!-- 12 -->
+          <tr>
+            <td>12</td>
+            <td>Jajan Malam: Dimsum, Bakso Bakar &amp; Jasuke</td>
+            <td>Mengajarkan kebersamaan keluarga saat memilih makanan, mengenal makanan tradisional &amp; modern</td>
+            <td>Mengetahui ragam jajanan malam, cara penyajian, serta perbedaan jajanan tradisional &amp; modern</td>
+            <td>Belajar memilih makanan sehat, menghitung porsi, dan interaksi sosial dalam memilih menu</td>
+            <td>Visual jajanan, aroma, suara pedagang, interaksi keluarga</td>
+            <td>Mengembangkan kemampuan memilih, menghargai makanan, serta kebiasaan bersih</td>
+            <td>Melatih logika sederhana (memilih jenis jajanan), pengelolaan porsi, serta etika makan</td>
+            <td>Jajanan malam, dimsum, bakso bakar, Jasuke, keluarga, interaksi sosial, makanan tradisional, modern</td>
+            <td class="like">Suka 👍</td>
+            <td>Karena video menghibur, memperkenalkan makanan lokal, dan menunjukkan interaksi hangat keluarga</td>
+          </tr>
+          <!-- 13 -->
+          <tr>
+            <td>13</td>
+            <td>Sarapan Sehat &amp; Kreatif: Jus Alpukat &amp; Nasi Goreng</td>
+            <td>Mengajarkan kebiasaan sarapan sehat, manajemen waktu sebelum sekolah, dan interaksi anak-opung</td>
+            <td>Mengetahui cara membuat jus alpukat coklat, cara makan dan membawa makanan sendiri, serta istilah “terang bulan”</td>
+            <td>Belajar sarapan sehat, menghitung suapan, bersih-bersih, dan tanggung jawab makan sendiri</td>
+            <td>Visual jus alpukat, nasi goreng, anjing Blacky ikut berinteraksi, suara musik, humor, dan interaksi sehari-hari</td>
+            <td>Mengembangkan kemandirian anak, kemampuan motorik saat membawa makanan, serta disiplin sebelum sekolah</td>
+            <td>Melatih logika sederhana (menghitung suapan, memilih makanan), kreativitas (campuran jus) dan etika makan</td>
+            <td>Sarapan, jus alpukat, nasi goreng, makanan sehat, kebiasaan pagi, kemandirian, interaksi anak-opung, Blacky</td>
+            <td class="like">Suka 👍</td>
+            <td>Karena video penuh interaksi lucu, edukasi sarapan sehat, kemandirian anak, dan visual menarik</td>
+          </tr>
+          <!-- 14 -->
+          <tr>
+            <td>14</td>
+            <td>Kunjungan DPRD &amp; Perpustakaan Digital</td>
+            <td>Mengajarkan pentingnya membaca, mengenal gedung pemerintahan, perpustakaan, dan mobil pemerintah</td>
+            <td>Mengetahui cara membaca hardcopy dan softcopy buku, istilah “jendela dunia”, plat mobil pemerintah, perpustakaan digital</td>
+            <td>Belajar menghitung orang, mengenal ornamen Batak, membaca petunjuk, mengoperasikan perpustakaan digital</td>
+            <td>Visual kantor DPRD, ornamen Batak, anak membaca buku dan menggunakan HP, mobil perpustakaan, interaksi sehari-hari</td>
+            <td>Mengembangkan kemandirian, literasi digital, kemampuan membaca, dan pengamatan lingkungan sekitar</td>
+            <td>Melatih logika, keterampilan observasi, dan pemahaman hubungan antara membaca, informasi, dan dunia nyata</td>
+            <td>DPRD, perpustakaan digital, membaca buku, jendela dunia, literasi, anak SD, ornamen Batak, mobil pemerintah</td>
+            <td class="like">Suka 👍</td>
+            <td>Video edukatif dan interaktif, menampilkan literasi digital, pengenalan budaya lokal, dan interaksi anak</td>
+          </tr>
+          <!-- 15 -->
+          <tr>
+            <td>15</td>
+            <td>Bermain &amp; Bereksperimen di Rumah Saat Hujan</td>
+            <td>Mengajarkan kreatifitas, inovasi, dan pengamatan terhadap lingkungan serta kondisi cuaca</td>
+            <td>Mengetahui perbedaan rumah di Medan dan Fatimah, sensasi suara hujan, penggunaan sepeda sebagai mainan</td>
+            <td>Belajar memanfaatkan ruang sempit, berimajinasi, dan mengatur mainan atau alat bermain</td>
+            <td>Visual rumah, sepeda, hujan, lampu, alat mainan, interaksi dengan Opung</td>
+            <td>Mengembangkan kreativitas, imajinasi, kemandirian, dan keterampilan motorik</td>
+            <td>Melatih kemampuan berpikir logis, berinovasi dengan kondisi nyata, dan memahami sebab-akibat fenomena</td>
+            <td>Hujan, sepeda, bermain, eksperimen, rumah, improvisasi, imajinasi, kreativitas</td>
+            <td class="like">Suka 👍</td>
+            <td>Video menghibur sekaligus edukatif, mendorong kreativitas anak dalam bermain dan eksperimen di rumah</td>
+          </tr>
+          <!-- 16 -->
+          <tr>
+            <td>16</td>
+            <td>Kunjungan ke Air Soda Parbubu &amp; Pohon Aren</td>
+            <td>Mengajarkan budaya lokal, pengamatan alam, sejarah lokal, dan penggunaan sumber daya alam</td>
+            <td>Mengetahui lokasi air soda Parbubu, sejarah kampung 1000 gereja, fungsi pohon aren secara tradisional</td>
+            <td>Belajar menghargai alam, mengamati proses produksi gula aren, serta mengenal manfaat pohon aren</td>
+            <td>Visual permandian air soda, pohon aren, buah aren, gereja, makanan, interaksi sosial</td>
+            <td>Mengembangkan rasa ingin tahu, kreativitas, kemampuan observasi, dan apresiasi budaya lokal</td>
+            <td>Melatih kemampuan analisis fungsi benda/alami, logika sebab-akibat, dan kesadaran konservasi</td>
+            <td>Air soda, pohon aren, gula aren, kolang-kaling, tuak, budaya Batak, gereja, makanan lokal</td>
+            <td class="like">Suka 👍</td>
+            <td>Video edukatif, memperkenalkan pengetahuan tradisional sekaligus wisata lokal dengan cara yang menyenangkan</td>
+          </tr>
+          <!-- 17 -->
+          <tr>
+            <td>17</td>
+            <td>Fenomena Kabut &amp; Pemandangan Pagi</td>
+            <td>Mengenalkan fenomena alam: kabut, cuaca, suhu, perbedaan kondisi pagi; observasi alam</td>
+            <td>Kabut, perbedaan hujan vs tidak hujan, suhu rendah (~16°C), pengaruh lokasi tinggi vs rendah, perilaku binatang</td>
+            <td>Mengamati perbedaan fenomena alam tiap hari, belajar kesabaran, pengamatan detail</td>
+            <td>Visual kabut, bayangan, warna langit, interaksi dengan anak-anak dan binatang, suara jangkrik</td>
+            <td>Mengembangkan rasa ingin tahu, observasi lingkungan, kemampuan membedakan kondisi cuaca</td>
+            <td>Melatih analisis sebab-akibat fenomena alam, menghargai ciptaan Tuhan, berpikir kritis tentang alam</td>
+            <td>Kabut, hujan, suhu, Tarutung, pemandangan pagi, alam, binatang, fenomena cuaca</td>
+            <td class="like">Suka 👍</td>
+            <td>Memberikan pengalaman belajar fenomena alam secara visual, lengkap dengan pengamatan sensorik dan narasi</td>
+          </tr>
+          <!-- 18 -->
+          <tr>
+            <td>18</td>
+            <td>Observasi Sawah &amp; Pertanian</td>
+            <td>Mengenalkan proses pertanian padi dan jagung, pengenalan tanaman, panen, dan olahan pangan</td>
+            <td>Jenis-jenis tanaman: padi, jagung, kelapa, pisang, aren, coklat, bambu, kemiri; proses tanam-panen; masa panen; fungsi orang-orangan sawah</td>
+            <td>Mengamati sawah dan tanaman, belajar perbedaan masa tanam dan harga padi, mengaitkan dengan konsumsi pangan</td>
+            <td>Visual sawah, tanaman, kolam ikan di sawah, interaksi anak-anak, mencicipi makanan dari hasil panen</td>
+            <td>Mengembangkan kesadaran akan proses pangan, pengamatan lingkungan, menghargai hasil alam</td>
+            <td>Melatih analisis hubungan antara jenis tanaman, masa tanam, harga, dan kegunaan tanaman</td>
+            <td>Sawah, padi, jagung, kelapa, pisang, aren, coklat, bambu, kemiri, pertanian, panen, olahan pangan</td>
+            <td class="like">Suka 👍</td>
+            <td>Memberikan pemahaman langsung tentang proses pertanian, visualisasi tanaman, dan interaksi sensorik</td>
+          </tr>
+          <!-- 19 -->
+          <tr>
+            <td>19</td>
+            <td>Belajar Coding &amp; Aktivitas Unplugged SD</td>
+            <td>Mengenalkan metode pembelajaran coding tanpa perangkat (unplugged) dan berpikir sistematis</td>
+            <td>Konsep coding dasar, pemecahan masalah, kolaborasi, membaca instruksi, penggunaan AI sederhana</td>
+            <td>Anak-anak belajar menyalin, membaca, menulis, serta mengenal AI dan alat bantu digital</td>
+            <td>Mendengar instruksi guru, menulis manual, interaksi dengan teman, penggunaan perangkat AI terbatas</td>
+            <td>Mengembangkan kesabaran, konsentrasi, dan kemampuan mengikuti instruksi</td>
+            <td>Melatih berpikir sistematis, analisis masalah, kolaborasi, serta memahami alat sebagai sarana, bukan tujuan</td>
+            <td>Coding, unplugged, AI, membaca, menulis, kolaborasi, berpikir sistematis, pembelajaran SD</td>
+            <td class="like">Suka 👍</td>
+            <td>Memberikan pengalaman belajar aktif, menggabungkan praktik tangan dan pemikiran logis</td>
+          </tr>
+          <!-- 20 -->
+          <tr>
+            <td>20</td>
+            <td>Fenomena Danau Fat Morgana &amp; Geografi</td>
+            <td>Mengenalkan fenomena alam, efek hujan dan sinar matahari, serta pengamatan lingkungan sekitar</td>
+            <td>Kondisi embun, kabut, uap air, efek panas bumi, dan geografi tempat rendah dan tinggi</td>
+            <td>Anak-anak belajar mengamati alam, membedakan uap dan asap, memahami interaksi air-hujan-matahari</td>
+            <td>Pengamatan visual fenomena alam, mendengar penjelasan, interaksi dengan lingkungan, pengamatan detail</td>
+            <td>Mengembangkan kemampuan pengamatan, kesabaran, ketelitian, dan apresiasi alam</td>
+            <td>Melatih berpikir ilmiah, analisis sebab-akibat, dan pemahaman fenomena alam</td>
+            <td>Danau, Fat Morgana, hujan, embun, kabut, geografi, pengamatan alam, sains lingkungan</td>
+            <td class="like">Suka 👍</td>
+            <td>Memberikan pengalaman belajar langsung di alam, mengajarkan observasi dan analisis ilmiah</td>
+          </tr>
+          <!-- 21 -->
+          <tr>
+            <td>21</td>
+            <td>Belajar &amp; Bermain Mainan Modifikasi</td>
+            <td>Mengenalkan proses belajar sambil bermain, keterampilan motorik, dan tanggung jawab</td>
+            <td>Cara menggunakan alat sederhana (obeng, mainan), hitung jumlah benda, istilah lokal Bodat/Herex</td>
+            <td>Anak belajar menata, menghitung, memperbaiki, dan memahami urutan kerja sebelum bermain</td>
+            <td>Mengamati, memegang mainan dan alat, mendengar instruksi, interaksi dengan tulang dan teman</td>
+            <td>Mengembangkan kesabaran, tanggung jawab, kemampuan memodifikasi dan fokus</td>
+            <td>Melatih berpikir logis, urutan tindakan, menghitung, dan disiplin saat belajar dan bermain</td>
+            <td>Mainan, modifikasi, hitung, obeng, tanggung jawab, fokus, belajar sambil bermain</td>
+            <td class="like">Suka 👍</td>
+            <td>Mengajarkan anak mengatur, menghitung, dan mengutamakan belajar sebelum bermain, menyenangkan</td>
+          </tr>
+
+
+          <tr>
+<td>22</td>
+<td>Minum Jus Alpukat Pagi Hari Bersama Opung</td>
+<td>Mengajarkan pentingnya sarapan sehat dan disiplin menjaga kesehatan</td>
+<td>Mengetahui manfaat buah (alpukat, jeruk, nanas) untuk pencernaan dan serat</td>
+<td>Membiasakan anak untuk minum jus sebelum beraktivitas</td>
+<td>Merasakan rasa jus alpukat (manis, asam) serta membandingkan dengan buah lain</td>
+<td>Mengembangkan kebiasaan hidup sehat sejak kecil</td>
+<td>Membiasakan berpikir bahwa serat penting untuk BAB lancar</td>
+<td>Jus alpukat, sarapan sehat, serat, kesehatan pencernaan</td>
+<td>Suka 👍</td>
+<td>Karena menambah pengetahuan tentang buah dan pentingnya minum jus untuk kesehatan</td>
+</tr>
+
+<tr>
+  <td>23</td>
+  <td>Renovasi Truk & Belajar Kunci Rumah Bersama Keluarga</td>
+  <td>Mengajarkan anak untuk bertanya, berkomunikasi, serta belajar tanggung jawab menjaga rumah</td>
+  <td>Mengetahui fungsi kendaraan (pick up, box, motor), penggunaan kunci, dan keamanan rumah</td>
+  <td>Belajar praktik mengunci pintu, menutup gerbang, serta merapikan barang</td>
+  <td>Melihat, mendengar, dan merasakan langsung proses kunci pintu, gerbang, dan kendaraan</td>
+  <td>Mengembangkan keterampilan motorik halus (memutar kunci, menutup rapat) dan rasa tanggung jawab</td>
+  <td>Melatih pola pikir kritis, mandiri, serta logis dalam menyelesaikan masalah rumah tangga</td>
+  <td>Truk, kunci rumah, kendaraan, keamanan</td>
+  <td>Suka 👍</td>
+  <td>Karena mengajarkan keterampilan praktis sekaligus tanggung jawab dalam kehidupan sehari-hari</td>
+</tr>
+
+<tr>
+  <td>24</td>
+  <td>Paket Shopee & Unboxing Pianika Baru</td>
+  <td>Mengajarkan anak mengenal proses belanja online, menerima paket, serta berlatih alat musik</td>
+  <td>Mengetahui cara kerja belanja online (COD, pembayaran, pengiriman) dan fungsi pianika</td>
+  <td>Belajar unboxing, memasang bagian pianika, serta mencoba memainkan lagu sederhana</td>
+  <td>Melihat paket datang, merasakan membuka plastik, mendengar suara pianika</td>
+  <td>Mengembangkan keterampilan motorik, koordinasi tangan-mulut, dan rasa ingin tahu</td>
+  <td>Melatih pola pikir kreatif, eksploratif, serta menghargai barang baru</td>
+  <td>Shopee, COD, unboxing, pianika, musik</td>
+  <td>Suka 👍</td>
+  <td>Karena menarik, seru, sekaligus mendidik tentang belanja online dan musik</td>
+</tr>
+
+<tr>
+  <td>25</td>
+  <td>Jus Alpukat Rasa Cimol & Eksperimen Uap vs Asap</td>
+  <td>Mengajarkan disiplin minum sampai habis, nilai syukur (tidak membuang makanan), serta belajar PPKn</td>
+  <td>Mengetahui arti “personal” (dari person), perbedaan uap dan asap, cara kerja magicom & kompor</td>
+  <td>Belajar dengan percakapan keluarga, eksperimen sederhana dengan uap, serta diskusi tentang rasa</td>
+  <td>Merasakan jus, mencium aroma blender, melihat uap naik, mendengar suara magicom</td>
+  <td>Mengembangkan rasa ingin tahu, disiplin, serta keterampilan membandingkan</td>
+  <td>Melatih berpikir kritis (penyelidikan rasa cimol), logis (uap ≠ asap), reflektif (bersyukur makanan)</td>
+  <td>Jus alpukat, cimol, balado, sosis, PPKn, uap, asap, magicom, Yongma</td>
+  <td>Suka 👍</td>
+  <td>Karena lucu (jus rasa cimol), mendidik (IPA + PPKn), dan menyentuh nilai moral sehari-hari</td>
+</tr>
+
+
+<tr>
+  <td>26</td>
+  <td>Anak 7 Tahun Pesan Paket & Ribut COD</td>
+  <td>Memberi pelajaran penting tentang kontrol penggunaan gadget pada anak, tanggung jawab orang tua, serta bahaya transaksi online tanpa pengawasan</td>
+  <td>Mengetahui proses COD, ongkir, risiko salah alamat, serta aturan kurir dalam pengiriman/pengembalian</td>
+  <td>Melatih anak & keluarga untuk lebih bijak dalam belanja online, komunikasi dengan kurir, dan menyadari pentingnya izin orang tua</td>
+  <td>Suasana tegang antara anak, orang tua, dan kurir; mendengar diskusi soal uang, ongkir, paket, dan minta maaf</td>
+  <td>Mengembangkan disiplin, rasa tanggung jawab, serta kesadaran akan konsekuensi perbuatan</td>
+  <td>Melatih logika (mengapa bisa pesan?), etika (minta maaf), tanggung jawab (HP disita), serta kewaspadaan digital</td>
+  <td>Paket, COD, anak kecil, Shopee, ongkir, gadget, tanggung jawab</td>
+  <td>Tidak suka 👎</td>
+  <td>Karena menimbulkan keributan, risiko finansial, dan bahaya bagi anak, meskipun jadi pengalaman pembelajaran berharga</td>
+</tr>
+
+
+
+<tr>
+  <td>27</td>
+  <td>Mengenalkan Jenis-Jenis Tanaman kepada Nathanael Berakhir dengan Bertengger di Belakang Mobil</td>
+  <td>Mengajarkan pentingnya mengenalkan anak pada alam sejak dini</td>
+  <td>Mengenal berbagai jenis tanaman dan keanekaragaman hayati</td>
+  <td>Belajar secara langsung melalui pengalaman nyata di alam</td>
+  <td>Melibatkan indera penglihatan, sentuhan, dan interaksi langsung dengan tanaman</td>
+  <td>Mengembangkan rasa ingin tahu, keberanian, serta keterampilan sosial</td>
+  <td>Melatih spontanitas, rasa humor, dan apresiasi terhadap alam</td>
+  <td>Tanaman, belajar alam, Nathanael, mobil, spontanitas</td>
+  <td>Suka 👍</td>
+  <td>Karena video menampilkan pembelajaran yang menyenangkan, penuh keceriaan, serta ada momen unik dan lucu yang menambah daya tarik</td>
+</tr>
+
+<tr>
+  <td>27</td>
+  <td>Nathanael Tiba-Tiba Pergi ke Desa Opung di Karing, Medan</td>
+  <td>Mengajarkan pentingnya memahami budaya lokal dan kehidupan desa</td>
+  <td>Mengetahui kehidupan masyarakat desa, tradisi, serta tantangan sehari-hari</td>
+  <td>Belajar menyesuaikan diri dengan lingkungan baru dan menghargai budaya lokal</td>
+  <td>Melibatkan pengalaman langsung melihat, mendengar, dan merasakan kehidupan desa</td>
+  <td>Mengembangkan empati, keterbukaan, serta rasa kebersamaan</td>
+  <td>Melatih adaptasi, penghargaan terhadap tradisi, dan refleksi sosial</td>
+  <td>Desa Karing, Medan, budaya lokal, tradisi, kehidupan desa</td>
+  <td>Suka 👍</td>
+  <td>Karena memberikan wawasan budaya yang autentik, pengalaman bermakna, serta memperlihatkan pentingnya menghargai kehidupan desa</td>
+</tr>
+
+<tr>
+  <td>28</td>
+  <td>Juki, Toy Car Explained POV Nathanael</td>
+  <td>Mengajarkan konsep mekanika dasar, kreativitas, serta nilai budaya mainan tradisional</td>
+  <td>Mengetahui sejarah, desain, material, variasi model, dan mekanisme gerak Juki</td>
+  <td>Belajar memahami cara kerja roda, poros, sambungan, serta nilai edukatif dari bermain Juki</td>
+  <td>Melibatkan indera visual dan motorik dalam mengamati, menyentuh, dan memainkan mainan</td>
+  <td>Mengembangkan imajinasi, kemampuan problem solving, dan apresiasi terhadap kualitas produk</td>
+  <td>Melatih analisis teknis, kreativitas, serta refleksi sosial dan nostalgia</td>
+  <td>Juki, mobil mainan, mekanika dasar, edukasi, koleksi, Nathanael</td>
+  <td>Suka 👍</td>
+  <td>Karena video ini menyajikan informasi lengkap, detail, dan menarik, sekaligus menghubungkan hiburan dengan edukasi</td>
+</tr>
+
+<tr>
+  <td>29</td>
+  <td>Sekolah Libur Tetapi Modifikasi Tetap Berjalan</td>
+  <td>Mengajarkan pentingnya adaptasi dalam pendidikan meskipun sekolah libur</td>
+  <td>Mengetahui bagaimana teknologi, kurikulum, dan metode pengajaran dimodifikasi</td>
+  <td>Belajar model pembelajaran jarak jauh, hybrid, dan berbasis teknologi</td>
+  <td>Memahami dampak langsung perubahan pada guru, siswa, dan orang tua</td>
+  <td>Mengembangkan keterampilan abad ke-21 seperti literasi digital, kreativitas, kolaborasi</td>
+  <td>Melatih fleksibilitas, berpikir kritis, dan kemampuan berinovasi</td>
+  <td>Sekolah libur, modifikasi, teknologi pendidikan, pembelajaran jarak jauh, hybrid</td>
+  <td>Suka 👍</td>
+  <td>Karena video ini menekankan bahwa pendidikan tetap berjalan meski sekolah tutup, dengan inovasi yang bermanfaat</td>
+</tr>
+
+<tr>
+  <td>30</td>
+  <td>Percakapan Nathanael dan Profesor Operasional Sebelum Mandi Pagi</td>
+  <td>Mengajarkan pentingnya rutinitas pagi, menjaga kesehatan mental, dan filosofi hidup sederhana</td>
+  <td>Mengetahui manfaat aktivitas fisik ringan, mandi pagi, serta pentingnya sikap positif</td>
+  <td>Belajar mengelola waktu pagi secara efektif dan konsisten</td>
+  <td>Memahami dampak mandi pagi sebagai penyegaran fisik dan mental, serta arti interaksi sosial</td>
+  <td>Mengembangkan keterampilan manajemen diri, literasi emosional, dan keseimbangan hidup</td>
+  <td>Melatih kesadaran diri, berpikir positif, serta fleksibilitas dalam menghadapi tantangan</td>
+  <td>Rutinitas pagi, mandi pagi, kesehatan mental, komunikasi, manajemen waktu, filosofi hidup</td>
+  <td>Suka 👍</td>
+  <td>Karena video ini memberi inspirasi membangun rutinitas pagi yang bermanfaat bagi produktivitas dan kesejahteraan hidup</td>
+</tr>
+
+<tr>
+  <td>31</td>
+  <td>Kardus Bekas sebagai Alat Utama Nathanael untuk Memodifikasi Mainan Truk</td>
+  <td>Mengajarkan pentingnya kreativitas dan pemanfaatan bahan sederhana</td>
+  <td>Mengetahui fungsi kardus sebagai bahan fleksibel dan ramah lingkungan</td>
+  <td>Belajar proses modifikasi mulai dari ide, perancangan, hingga realisasi menggunakan kardus</td>
+  <td>Memahami bentuk, tekstur, dan fleksibilitas kardus dalam proses kreasi</td>
+  <td>Mengembangkan keterampilan motorik halus, kreativitas, dan kepedulian lingkungan</td>
+  <td>Melatih berpikir out-of-the-box, inovatif, dan solutif</td>
+  <td>Kardus, modifikasi mainan, truk, daur ulang, kreativitas</td>
+  <td>Suka 👍</td>
+  <td>Karena video ini menunjukkan bagaimana bahan sederhana seperti kardus bisa diubah menjadi karya kreatif yang bermanfaat</td>
+</tr>
+
+
+<tr>
+  <td>32</td>
+  <td>Op. Prof Berinteraksi dengan Komunitas Kelas II B di Area Pos Keamanan</td>
+  <td>Mengajarkan pentingnya kolaborasi antara akademisi dan komunitas untuk keamanan lingkungan</td>
+  <td>Mengetahui tantangan dan kebutuhan komunitas dalam menjaga keamanan di area pos</td>
+  <td>Belajar strategi manajemen keamanan yang efektif dan berkelanjutan</td>
+  <td>Memahami pentingnya komunikasi terbuka dan empati dalam interaksi sosial</td>
+  <td>Mengembangkan kemampuan kerja sama, kepemimpinan, dan keterlibatan sosial</td>
+  <td>Melatih berpikir kritis, solutif, dan kolaboratif</td>
+  <td>Profesor, komunitas, pos keamanan, kolaborasi, kesejahteraan</td>
+  <td>Suka 👍</td>
+  <td>Karena video ini menekankan pentingnya sinergi akademisi dan masyarakat dalam menciptakan lingkungan aman</td>
+</tr>
+
+<tr>
+  <td>33</td>
+  <td>Truk Kontemporer Modifikasi Nathanael</td>
+  <td>Mengajarkan pentingnya inovasi dan kreativitas dalam dunia otomotif</td>
+  <td>Mengetahui detail modifikasi mesin, suspensi, eksterior, dan interior pada truk modern</td>
+  <td>Belajar bagaimana modifikasi dapat meningkatkan performa, kenyamanan, dan estetika kendaraan</td>
+  <td>Memahami hubungan antara teknologi, estetika, dan fungsi kendaraan</td>
+  <td>Mengembangkan keterampilan analitis, apresiasi estetika, serta wawasan teknologi otomotif</td>
+  <td>Melatih berpikir kreatif, inovatif, serta menghargai fungsi dan estetika kendaraan</td>
+  <td>Truk modifikasi, kontemporer, mesin, suspensi, desain, teknologi, interior</td>
+  <td>Suka 👍</td>
+  <td>Karena video ini menekankan bahwa modifikasi truk bukan hanya estetika, tetapi juga inovasi teknis dan kenyamanan</td>
+</tr>
+
+
+<tr>
+  <td>34</td>
+  <td>Komunitas Suku Nias Tempat Nathanael Selalu Dipangkas</td>
+  <td>Mengajarkan pentingnya tradisi budaya dalam membentuk karakter individu</td>
+  <td>Mengetahui tradisi pemangkasan, kehidupan sosial, bahasa, dan seni tari khas suku Nias</td>
+  <td>Belajar bagaimana ritual dan tradisi membentuk ketangguhan, kebersamaan, serta penghormatan leluhur</td>
+  <td>Memahami kekayaan budaya, simbolisme ritual, serta pengalaman hidup komunal</td>
+  <td>Mengembangkan identitas, spiritualitas, dan kemampuan beradaptasi di tengah modernisasi</td>
+  <td>Melatih berpikir kritis, apresiatif, serta menghargai warisan budaya</td>
+  <td>Suku Nias, pemangkasan, tradisi, leluhur, kebersamaan, bahasa, tarian</td>
+  <td>Suka 👍</td>
+  <td>Karena video ini menekankan bagaimana budaya Nias menjaga identitas dan ketangguhan generasi melalui tradisi leluhur</td>
+</tr>
+
+<tr>
+  <td>35</td>
+  <td>Penjelasan Op. Prof. kepada Nathanael tentang Posisi Universitas Indonesia sebagai Barometer</td>
+  <td>Memberikan pemahaman tentang peran strategis universitas dalam pendidikan nasional</td>
+  <td>Mengetahui peran UI sebagai pusat riset, inovasi, dan tolok ukur pendidikan tinggi di Indonesia</td>
+  <td>Belajar pentingnya riset, kolaborasi, dan adaptasi pendidikan tinggi di era globalisasi</td>
+  <td>Memahami posisi UI sebagai institusi unggulan yang berpengaruh luas di Indonesia</td>
+  <td>Mengembangkan wawasan tentang kualitas SDM, riset, serta adaptasi pendidikan tinggi di era digital</td>
+  <td>Melatih pola pikir kritis, strategis, dan apresiatif terhadap peran universitas</td>
+  <td>Universitas Indonesia, barometer, pendidikan tinggi, riset, inovasi, SDM</td>
+  <td>Suka 👍</td>
+  <td>Karena video ini menekankan pentingnya UI dalam membentuk SDM, kebijakan, dan riset untuk kemajuan bangsa</td>
+</tr>
+
+<tr>
+  <td>36</td>
+  <td>Opung Medan Datang Menemui Nathanael yang Sedang Berakting</td>
+  <td>Mengajarkan pentingnya dukungan keluarga dalam mengembangkan bakat anak</td>
+  <td>Mengetahui peran figur keluarga dalam menumbuhkan semangat dan rasa percaya diri</td>
+  <td>Belajar bagaimana komunikasi hangat dapat memperkuat ikatan emosional dan motivasi</td>
+  <td>Memahami kehangatan, humor, dan dukungan dalam interaksi keluarga</td>
+  <td>Mengembangkan rasa percaya diri, bakat seni, serta motivasi untuk terus berkarya</td>
+  <td>Melatih empati, apresiasi terhadap peran keluarga, dan pola pikir positif</td>
+  <td>Opung Medan, Nathanael, akting, dukungan keluarga, humor, kehangatan</td>
+  <td>Suka 👍</td>
+  <td>Karena video ini menunjukkan peran keluarga yang sangat penting dalam membangun semangat, bakat, dan kebahagiaan</td>
+</tr>
+
+<tr>
+  <td>37</td>
+  <td>Membicarakan Peribahasa Berlanjut di Tempat Tidur</td>
+  <td>Mengajarkan arti dan perbedaan antara pantun, peribahasa, serta “Miranda”</td>
+  <td>Mengetahui contoh peribahasa, pantun, dan istilah budaya seperti <i>bojak ranggang</i> dan <i>bojak bortung</i></td>
+  <td>Belajar bagaimana bahasa kiasan digunakan dalam budaya sehari-hari dan makna di baliknya</td>
+  <td>Memahami arti simbolis dalam istilah lokal dan kaitannya dengan kehidupan sehari-hari</td>
+  <td>Mengembangkan keterampilan berbahasa, apresiasi budaya, serta pemahaman nilai tradisional</td>
+  <td>Melatih kemampuan analisis bahasa, berpikir kritis, serta refleksi budaya</td>
+  <td>Peribahasa, pantun, Miranda, bahasa kiasan, budaya, doa malam, keluarga</td>
+  <td>Suka 👍</td>
+  <td>Karena video ini menggabungkan pendidikan bahasa, budaya, dan nilai spiritual dalam suasana kekeluargaan yang hangat</td>
+</tr>
+
+<tr>
+  <td>38</td>
+  <td>Truk dari COD: Cara Opung Prof. Mengajarkan Fungsi Pengetahuan</td>
+  <td>Mengajarkan pentingnya keseimbangan, keselamatan, serta nilai-nilai tanggung jawab dalam hidup</td>
+  <td>Mengetahui tentang muatan truk, modifikasi, overload, istilah teknis seperti “lock”, serta arti peribahasa</td>
+  <td>Belajar bagaimana konsep pengetahuan dipadukan dengan nilai spiritual dan logika kehidupan sehari-hari</td>
+  <td>Memahami hubungan antara mainan (truk) dengan kehidupan nyata, termasuk resiko overload dan simbol-simbol</td>
+  <td>Mengembangkan kemampuan berpikir kritis, literasi teknis, dan penguatan nilai iman tanpa salah tafsir</td>
+  <td>Melatih logika, refleksi, berpikir analitis, serta pemahaman etika spiritual</td>
+  <td>Truk COD, modifikasi, overload, keseimbangan, peribahasa, ilmu & iman</td>
+  <td>Suka 👍</td>
+  <td>Karena video ini menggabungkan permainan, ilmu pengetahuan, dan nilai rohani dengan cara yang kreatif dan penuh makna</td>
+</tr>
+
+<tr>
+  <td>39</td>
+  <td>Small Talk Op. Prof. dengan Teman Sekelas Nathanael</td>
+  <td>Mengajarkan pentingnya interaksi sosial dan komunikasi sebelum pembelajaran dimulai</td>
+  <td>Mengetahui bagaimana small talk dapat mempengaruhi suasana kelas dan kesiapan belajar siswa</td>
+  <td>Belajar menciptakan suasana nyaman dan terbuka agar siswa lebih fokus dan termotivasi</td>
+  <td>Memahami bagaimana komunikasi informal dapat membangun koneksi emosional dan sosial siswa</td>
+  <td>Mengembangkan kemampuan sosial, empati, dan interaksi interpersonal siswa</td>
+  <td>Melatih pemikiran humanis dan strategis dalam pendidikan</td>
+  <td>Small talk, interaksi sosial, suasana belajar, komunikasi</td>
+  <td>Suka 👍</td>
+  <td>Karena video menekankan pentingnya interaksi sosial untuk meningkatkan keterlibatan dan efektivitas belajar siswa</td>
+</tr>
+
+<tr>
+  <td>40</td>
+  <td>Nathanael Membeli Casing Baru untuk Tablet Baru</td>
+  <td>Mengajarkan pentingnya proteksi perangkat elektronik dan pemilihan aksesori yang tepat</td>
+  <td>Mengetahui berbagai jenis casing tablet, bahan, desain, dan fungsinya</td>
+  <td>Belajar memilih casing yang sesuai kebutuhan, meliputi perlindungan, kenyamanan, dan estetika</td>
+  <td>Memahami penggunaan casing dari segi fisik, pemasangan, dan pengujian ketahanan tablet</td>
+  <td>Mengembangkan kemampuan observasi dan evaluasi produk sebelum membeli atau menggunakan</td>
+  <td>Melatih pola pikir praktis dan kritis dalam memilih produk teknologi</td>
+  <td>Casing tablet, proteksi, ergonomis, fitur tambahan</td>
+  <td>Suka 👍</td>
+  <td>Karena video memberikan panduan praktis dan tips penting dalam memilih casing tablet yang berkualitas dan fungsional</td>
+</tr>
+
+<tr>
+  <td>41</td>
+  <td>Nathanael Belajar Otomotif Melalui Learning By Doing</td>
+  <td>Mengajarkan metode belajar praktik langsung dalam bidang otomotif</td>
+  <td>Mengetahui komponen kendaraan, fungsi dasar, dan teknik perbaikan</td>
+  <td>Belajar memecahkan masalah otomotif melalui eksperimen dan observasi langsung</td>
+  <td>Memahami mekanisme kendaraan melalui praktik langsung dan pengamatan visual</td>
+  <td>Mengembangkan keterampilan teknis dan problem solving di bidang otomotif</td>
+  <td>Melatih pola pikir kritis, inovatif, dan kreatif dalam menghadapi masalah teknis kendaraan</td>
+  <td>Otomotif, praktik langsung, troubleshooting, eksperimen</td>
+  <td>Suka 👍</td>
+  <td>Karena video menekankan pengalaman belajar nyata, kreativitas, dan problem solving dalam otomotif yang dapat diikuti oleh pemula</td>
+</tr>
+
+<tr>
+  <td>42</td>
+  <td>Membeli Jam Dinding Untuk Belajar Membaca Waktu</td>
+  <td>Mengajarkan anak pentingnya mengenal waktu melalui jam dinding</td>
+  <td>Mengetahui posisi jarum jam, menit, dan detik serta konsep waktu dasar</td>
+  <td>Belajar membaca waktu secara interaktif dan rutin melalui jam dinding</td>
+  <td>Memahami waktu secara visual dan meningkatkan keterampilan motorik halus melalui manipulasi jarum</td>
+  <td>Mengembangkan keterampilan numerik, konsentrasi, dan disiplin waktu sejak dini</td>
+  <td>Melatih pola pikir terstruktur, logis, dan sistematis dalam memahami waktu</td>
+  <td>Jam dinding, membaca waktu, visualisasi, interaktif</td>
+  <td>Suka 👍</td>
+  <td>Karena video memberikan panduan praktis dalam memilih jam dinding yang efektif sebagai media belajar anak</td>
+</tr>
+
+
+<tr>
+  <td>43</td>
+  <td>Kejutan Nathanael Saat Memesan Mainan Truk Online</td>
+  <td>Mengajarkan tentang pengalaman belanja online dan konsekuensi dari ekspektasi yang berbeda</td>
+  <td>Mengetahui perbedaan antara ekspektasi produk dan realita produk yang diterima</td>
+  <td>Belajar berhati-hati dan realistis saat membeli barang secara daring</td>
+  <td>Memahami reaksi emosional pelanggan terhadap kejutan belanja online</td>
+  <td>Mengembangkan kesadaran konsumen dan keterampilan evaluasi produk</td>
+  <td>Melatih pola pikir kritis dan reflektif terhadap transaksi online</td>
+  <td>Belanja online, mainan truk, pengalaman konsumen</td>
+  <td>Suka 👍</td>
+  <td>Video memberikan pelajaran penting tentang belanja daring, ekspektasi produk, dan reaksi konsumen</td>
+</tr>
+
+
+<tr>
+  <td>44</td>
+  <td>Op.Ndut Keluar Tanpa Izin, Nathanael Merajuk</td>
+  <td>Mengajarkan pentingnya komunikasi dan izin dalam hubungan atau keluarga</td>
+  <td>Mengetahui akibat dari keluar tanpa izin dan ketidaksepahaman dalam interaksi interpersonal</td>
+  <td>Belajar menyelesaikan konflik kecil melalui komunikasi yang jelas dan terbuka</td>
+  <td>Memahami ekspresi emosi (merajuk, kecewa) sebagai respons terhadap perilaku orang lain</td>
+  <td>Mengembangkan kemampuan sosial dan keterampilan komunikasi anak</td>
+  <td>Melatih pola pikir kritis dalam menyelesaikan konflik interpersonal</td>
+  <td>Op.Ndut, Nathanael, keluar tanpa izin, merajuk, komunikasi</td>
+  <td>Suka 👍</td>
+  <td>Video menekankan pentingnya komunikasi terbuka untuk mencegah drama atau konflik dalam kehidupan sehari-hari</td>
+</tr>
+
+<tr>
+  <td>45</td>
+  <td>Kembalinya Nathanael dan Op.Prof ke Rumah Silangit</td>
+  <td>Mengajarkan nilai nostalgia, ikatan emosional, dan pentingnya rumah sebagai simbol identitas</td>
+  <td>Mengetahui bagaimana latar fisik (rumah Silangit) memperkuat hubungan dan kenangan antar karakter</td>
+  <td>Belajar menghargai tempat dengan makna khusus serta refleksi diri dari pengalaman masa lalu</td>
+  <td>Mengamati interaksi karakter, ekspresi emosi, dan nuansa lingkungan yang memengaruhi pengalaman</td>
+  <td>Mengembangkan pemahaman emosional dan hubungan sosial yang lebih mendalam</td>
+  <td>Melatih pola pikir reflektif dan memahami signifikansi tempat dalam pembentukan karakter</td>
+  <td>Nathanael, Op.Prof, Rumah Silangit, nostalgia, interaksi</td>
+  <td>Suka 👍</td>
+  <td>Video menunjukkan interaksi hangat, refleksi karakter, dan pentingnya tempat dalam membangun ikatan emosional</td>
+</tr>
+
+<tr>
+  <td>46</td>
+  <td>Op.Prof Berinteraksi Dengan Komunitas Kelas II B Di Area Pos Satpam</td>
+  <td>Mengajarkan pentingnya komunikasi, kerja sama, dan tanggung jawab dalam kegiatan sekolah</td>
+  <td>Mengetahui kegiatan kelas, interaksi guru-opung-siswa, serta prosedur pengumpulan tugas dan barang</td>
+  <td>Belajar mengikuti aturan, mengelola tugas, dan memahami tanggung jawab pribadi dan kelompok</td>
+  <td>Mengamati interaksi sosial, komunikasi verbal, dan ekspresi emosi siswa serta respons terhadap instruksi</td>
+  <td>Mengembangkan keterampilan sosial, manajemen waktu, dan kemampuan bekerja sama dalam kelompok</td>
+  <td>Melatih pola pikir kritis, pemecahan masalah, dan pengambilan keputusan berdasarkan situasi nyata</td>
+  <td>Op.Prof, Nathanael, kelas II B, pos satpam, komunikasi, tanggung jawab</td>
+  <td>Suka 👍</td>
+  <td>Video menunjukkan interaksi hangat, pembelajaran tanggung jawab, dan dinamika sosial dalam komunitas kelas</td>
+</tr>
+
+
+<tr>
+  <td>47</td>
+  <td>Mama Vanny Sedang Perbaikan Gigi, Nathanael Melakukan Inovasi</td>
+  <td>Mengajarkan pentingnya kesehatan diri, kesabaran, dan kreativitas</td>
+  <td>Mengetahui proses perbaikan gigi, langkah-langkah inovasi, dan cara menghadapi tantangan</td>
+  <td>Belajar merawat kesehatan, berinovasi, memecahkan masalah, dan mengembangkan ide kreatif</td>
+  <td>Mengamati prosedur medis, proses inovasi, dan respons emosional terhadap pengalaman baru</td>
+  <td>Mengembangkan kesadaran kesehatan, kemampuan inovasi, problem solving, dan kolaborasi</td>
+  <td>Melatih pola pikir kritis, kreatif, dan resilien dalam menghadapi masalah kesehatan maupun teknis</td>
+  <td>Mama Vanny, Nathanael, perbaikan gigi, inovasi, kreativitas, kesehatan, teknologi</td>
+  <td>Suka 👍</td>
+  <td>Video menunjukkan kombinasi edukasi kesehatan dan inovasi kreatif, memberikan inspirasi dan motivasi bagi penonton</td>
+</tr>
+
+<tr>
+  <td>48</td>
+  <td>Nathanael dan Barukh Kembali Ber De Javu</td>
+  <td>Mengajarkan interaksi sosial, pembelajaran matematika dasar, dan observasi lingkungan</td>
+  <td>Mengetahui angka, operasi penjumlahan sederhana, serta kehidupan sehari-hari di lingkungan sekitar</td>
+  <td>Belajar berhitung, bersosialisasi, memperhatikan aktivitas lingkungan, dan komunikasi interpersonal</td>
+  <td>Mengamati kendaraan, aktivitas malam hari, interaksi teman sebaya, dan suasana lingkungan sekitar</td>
+  <td>Mengembangkan kemampuan sosial, kolaborasi, observasi, dan pemecahan masalah kecil</td>
+  <td>Melatih pola pikir logis, kreatif, dan kritis dalam konteks bermain dan belajar bersama</td>
+  <td>Nathanael, Barukh, komunitas, matematika, interaksi, lingkungan</td>
+  <td>Suka 👍</td>
+  <td>Video menampilkan interaksi sosial yang hangat, edukasi matematika dasar, serta observasi lingkungan yang menarik bagi anak-anak</td>
+</tr>
+
+<tr>
+  <td>49</td>
+  <td>Perbincangan Nathanael & Op.Prof. dalam Perjalanan ke Acara Pembukaan UT di Sopo Partukoan</td>
+  <td>Mengajarkan interaksi keluarga, etika perjalanan, dan budaya akademik</td>
+  <td>Mengetahui struktur acara akademik, sejarah kunjungan keluarga, dan peran universitas terbuka</td>
+  <td>Belajar sopan santun, menghargai orang tua, memperhatikan etika dan budaya dalam perjalanan</td>
+  <td>Mengamati lingkungan, suasana perjalanan, interaksi multigenerasi, dan tata krama akademik</td>
+  <td>Mengembangkan kemampuan sosial, komunikasi, dan pemahaman budaya akademik</td>
+  <td>Melatih pola pikir kritis, reflektif, dan menghargai pengalaman orang lain</td>
+  <td>Nathanael, Op.Prof, keluarga, UT, sopo partukoan, perjalanan, akademik</td>
+  <td>Suka 👍</td>
+  <td>Video menampilkan interaksi hangat keluarga, pembelajaran budaya akademik, dan pengalaman perjalanan yang edukatif</td>
+</tr>
+
+
+<tr>
+  <td>50</td>
+  <td>Mengganti Lensa Kaca Mata Tindakan Lanjutan "Check Up Mata" Nathanael</td>
+  <td>Mengajarkan pentingnya kesehatan mata, pemeriksaan rutin, dan penggunaan kacamata yang tepat</td>
+  <td>Mengetahui prosedur check-up mata, penggantian lensa, dan pengaruh ukuran serta silindris lensa</td>
+  <td>Belajar membaca huruf optik, menyesuaikan lensa dengan kebutuhan mata, serta koordinasi visual</td>
+  <td>Mengamati perubahan visual saat lensa diganti, menguji ketajaman penglihatan, interaksi sensorik mata</td>
+  <td>Mengembangkan kemampuan visual, kesadaran akan kesehatan mata, dan adaptasi penggunaan kacamata</td>
+  <td>Melatih pola pikir kritis, observasi, dan evaluasi ketajaman penglihatan</td>
+  <td>Kacamata, lensa, mata, silindris, pemeriksaan, check-up, optik</td>
+  <td>Suka 👍</td>
+  <td>Video menampilkan proses edukatif tentang kesehatan mata, observasi, dan adaptasi penggunaan kacamata secara interaktif</td>
+</tr>
+
+
+<tr>
+  <td>51</td>
+  <td>Op.Prof Menjadikan Moment Pengisian Angin Ban Ajang Pembelajaran Otomotif</td>
+  <td>Mengajarkan pentingnya pengukuran, keselamatan, dan pengelolaan kendaraan</td>
+  <td>Mengetahui prosedur pengisian ban, pengukuran, serta aspirasi karier otomotif</td>
+  <td>Belajar observasi, praktik, dan mengikuti instruksi</td>
+  <td>Memperhatikan ukuran, teknik, dan penggunaan alat</td>
+  <td>Mengembangkan keterampilan motorik dan teknis</td>
+  <td>Membentuk pola pikir teliti, disiplin, dan aspiratif</td>
+  <td>Ban, pengisian angin, pengukuran, otomotif, karier</td>
+  <td>Suka</td>
+  <td>Memberikan pengalaman belajar praktis sambil menumbuhkan aspirasi dan tanggung jawab</td>
+</tr>
+
+<tr>
+  <td>52</td>
+  <td>Nathanael Tetap "Caper" Dikesibukan Op.Prof</td>
+  <td>Mengajarkan pengelolaan perilaku, manajemen waktu, dan kesadaran diri</td>
+  <td>Mengetahui indikator konflik, etika sosial, dan strategi organisasi</td>
+  <td>Belajar mengenali perilaku, mengatur waktu, dan berinteraksi sesuai konteks</td>
+  <td>Memperhatikan perilaku, respons emosional, dan timing</td>
+  <td>Mengembangkan keterampilan sosial, disiplin, dan refleksi diri</td>
+  <td>Membentuk pola pikir kritis, proaktif, dan bertanggung jawab</td>
+  <td>Perilaku, manajemen waktu, konflik, kesadaran diri, interaksi sosial</td>
+  <td>Suka</td>
+  <td>Memberikan pengalaman belajar perilaku, konflik, dan manajemen sosial melalui interaksi nyata</td>
+</tr>
+
+<tr>
+  <td>53</td>
+  <td>Perdana Di Pelabuhan Bakti Raja</td>
+  <td>Mengajarkan tentang pelabuhan, struktur kapal, dan ekosistem air tawar</td>
+  <td>Mengetahui sejarah pelabuhan, perbedaan laut dan danau, dan fitur kapal</td>
+  <td>Belajar observasi, memahami struktur kapal, dan mengenal lingkungan sekitar</td>
+  <td>Mengamati warna air, bentuk kapal, dan kegiatan pelabuhan</td>
+  <td>Mengembangkan keterampilan pengamatan dan pengetahuan lingkungan</td>
+  <td>Membentuk pola pikir kritis, inquisitif, dan reflektif</td>
+  <td>Pelabuhan, kapal, danau, laut, sejarah, ekosistem</td>
+  <td>Suka</td>
+  <td>Memberikan pengalaman belajar interaktif tentang alam, budaya, dan teknologi kapal</td>
+</tr>
+
+
+<tr>
+  <td>54</td>
+  <td>Hobi Baru Nathanael Memberi Makan Ikan</td>
+  <td>Mengajarkan cara memberi makan ikan dan memahami perilaku ikan</td>
+  <td>Mengetahui jenis ikan lele, warna, perilaku makan, dan habitat air tawar</td>
+  <td>Belajar memberi makan dengan sabar, mengamati respon ikan, dan eksperimen dengan berbagai makanan</td>
+  <td>Mengamati warna ikan, gelembung air, gerakan ikan, dan interaksi dengan lingkungan</td>
+  <td>Mengembangkan kesabaran, keterampilan observasi, dan koordinasi motorik halus</td>
+  <td>Membentuk pola pikir asosiatif dan reflektif melalui pengamatan dan eksperimen</td>
+  <td>Ikan lele, memberi makan, gelembung, cabang, tomat, habitat air tawar</td>
+  <td>Suka</td>
+  <td>Aktivitas interaktif yang menyenangkan sekaligus mendidik tentang ikan dan lingkungan</td>
+</tr>
+
+<tr>
+  <td>55</td>
+  <td>Terlambat Pulang Sekolah Karena Mobil Jemputan Rusak</td>
+  <td>Mengajarkan problem-solving, kerjasama, dan kesabaran</td>
+  <td>Mengetahui cara menangani kendaraan rusak, pentingnya bantuan komunitas</td>
+  <td>Belajar observasi, komunikasi, dan kreatifitas dalam menyelesaikan masalah</td>
+  <td>Mendengar instruksi, mengamati kendaraan, memahami situasi</td>
+  <td>Mengembangkan keterampilan sosial, koordinasi, dan empati</td>
+  <td>Membentuk pola pikir kreatif, analitis, dan kolaboratif</td>
+  <td>Mobil rusak, truk derek, kerjasama, sekolah, waktu, makan</td>
+  <td>Suka</td>
+  <td>Aktivitas interaktif yang menunjukkan kerja sama, humor, dan rutinitas sehari-hari</td>
+</tr>
+
+
+<tr>
+  <td>56</td>
+  <td>Bentuk Konkrit Hasil Pembelajaran P5 (Proyek Penguatan Profil Pelajar Pancasila) Pada Pembuatan Surat</td>
+  <td>Mengajarkan ekspresi perasaan, komunikasi jujur, dan simbolisasi kasih sayang melalui surat</td>
+  <td>Mengetahui cara mengekspresikan cinta, rasa hormat, dan apresiasi kepada keluarga melalui tulisan</td>
+  <td>Belajar menulis surat, memahami simbol cinta (tanda love), menyampaikan perasaan, dan mengaitkan pembelajaran P5 dengan kegiatan nyata</td>
+  <td>Melihat huruf, mendengar instruksi, memahami simbol, berinteraksi dengan anggota keluarga</td>
+  <td>Mengembangkan empati, kesadaran emosional, dan kemampuan verbal</td>
+  <td>Membentuk pola pikir jujur, reflektif, dan apresiatif terhadap orang lain</td>
+  <td>Surat, tanda love, keluarga, kasih sayang, P5, empati, komunikasi</td>
+  <td>Suka</td>
+  <td>Aktivitas emosional yang hangat, menggabungkan pembelajaran P5 dengan praktik nyata, mendorong kejujuran dan pengungkapan perasaan anak kepada keluarga</td>
+</tr>
+
+<tr>
+  <td>57</td>
+  <td>DUO LELAKI KECIL PEMBERANI BERSEPEDA DI AREA TER OFF-ROAD LEMBAH FATIMAH</td>
+  <td>Mengajarkan keberanian, eksplorasi, dan kerjasama dalam kegiatan outdoor</td>
+  <td>Mengetahui teknik bersepeda off-road, navigasi medan alam, dan keselamatan saat beraktivitas di alam terbuka</td>
+  <td>Belajar menghadapi tantangan fisik, bekerja sama, memecahkan masalah rintangan, dan menghargai alam</td>
+  <td>Melihat pemandangan, mendengar instruksi, merasakan medan off-road, berinteraksi dengan teman dan guru</td>
+  <td>Mengembangkan keberanian, ketahanan fisik, dan kemampuan koordinasi</td>
+  <td>Membentuk pola pikir percaya diri, resilien, kolaboratif, dan kreatif dalam menghadapi tantangan</td>
+  <td>Off-road, bersepeda, rintangan, alam, keberanian, kerja sama, eksplorasi</td>
+  <td>Suka</td>
+  <td>Aktivitas yang menantang dan mendidik, menggabungkan permainan, olahraga, dan pembelajaran nilai-nilai keberanian serta kerjasama di alam terbuka</td>
+</tr>
+
+<tr>
+  <td>58</td>
+  <td>Nathanael Berkebaktian Minggu Di Pos PI GMI Rumah Baca Silangkitang Tarutung</td>
+  <td>Mengajarkan nilai ibadah, kerendahan hati, dan pelayanan</td>
+  <td>Mengetahui pentingnya doa, pujian, pembacaan Alkitab, dan penerapan firman Tuhan</td>
+  <td>Belajar meneladani Kristus, hidup dalam kerendahan hati, dan mengaplikasikan prinsip hamba dalam kehidupan sehari-hari</td>
+  <td>Mendengar pujian, membaca Alkitab, mengamati contoh guru, merasakan suasana ibadah</td>
+  <td>Mengembangkan kesadaran spiritual, kemampuan beribadah, dan pemahaman firman Tuhan</td>
+  <td>Membentuk pola pikir rendah hati, melayani, dan mengutamakan kepentingan orang lain</td>
+  <td>Ibadah, pelayanan, hamba, kerendahan hati, Alkitab, pujian, Kristus</td>
+  <td>Suka</td>
+  <td>Aktivitas yang menumbuhkan iman, karakter Kristiani, serta mengajarkan nilai pelayanan dan kerendahan hati secara praktis</td>
+</tr>
+
+
+<tr>
+  <td>59</td>
+  <td>Mood Nathanael Tidak Stabil Tindakan Cabut Gigi Menjadi Labil</td>
+  <td>Mengajarkan pentingnya kesabaran, komunikasi efektif, dan teknik pengalihan dalam kedokteran gigi anak</td>
+  <td>Mengetahui prosedur pemeriksaan gigi anak, penanganan gigi goyang, penggunaan anestesi lokal, dan teknik distraction</td>
+  <td>Belajar mengelola anak yang takut, menggunakan humor, mainan, dan cerita untuk membuat prosedur gigi nyaman</td>
+  <td>Mendengar instruksi dokter, merasakan sensasi cold spray, melihat mainan dan interaksi, merespons arahan</td>
+  <td>Mengembangkan kemampuan kerjasama anak, ketahanan emosional, dan kepercayaan pada dokter</td>
+  <td>Membentuk pola pikir bahwa prosedur medis dapat dijalani dengan tenang, aman, dan menyenangkan</td>
+  <td>Cabut gigi, gigi goyang, anak takut, anestesi, mainan, pengalihan perhatian, kesabaran, dokter gigi</td>
+  <td>Suka</td>
+  <td>Memberikan contoh nyata bagaimana komunikasi, pengalihan, dan kesabaran dapat membuat anak nyaman selama prosedur medis, serta menekankan pentingnya empati</td>
+</tr>
+
+
+<tr>
+  <td>60</td>
+  <td>Dalam Segala Kesempatan Edukasi Tentang Rasional Berfikir dan Bertindak "Jalan Terus"</td>
+  <td>Mengajarkan anak-anak berpikir rasional, mengambil keputusan, dan memecahkan masalah saat bermain atau menghadapi situasi sehari-hari</td>
+  <td>Mengetahui cara mengatur keseimbangan muatan truk mainan, memahami sebab-akibat, dan memprediksi risiko dalam bermain</td>
+  <td>Belajar bertindak logis, menghitung kemungkinan, dan menghadapi tantangan saat bermain</td>
+  <td>Melihat, menyentuh, dan menggerakkan truk, merasakan ketidakseimbangan, mendengar suara benturan dan air</td>
+  <td>Mengembangkan kemampuan motorik halus dan kasar, serta koordinasi tangan-mata</td>
+  <td>Membentuk pola pikir rasional dan kritis, belajar memprediksi konsekuensi tindakan</td>
+  <td>Truk mainan, tangki bocor, tabrakan, ketidakseimbangan, lumpur, sungai, berpikir logis</td>
+  <td>Suka</td>
+  <td>Memberikan contoh nyata bagaimana berpikir rasional dan bertindak dengan logika dapat diterapkan dalam situasi bermain dan kehidupan sehari-hari, sambil tetap menyenangkan</td>
+</tr>
+
+
+        </tbody>
+      </table>
+    </div>
+
+    <p class="small" style="margin-top:12px">Tip: gunakan kolom pencarian untuk menemukan kata kunci atau judul lebih cepat. Tabel ini bisa disalin ke spreadsheet untuk kebutuhan analisis atau laporan.</p>
+  </div>
+
+  <script>
+    // simple client-side search (kata di semua kolom)
+    const input = document.getElementById('search');
+    const table = document.getElementById('videoTable').tBodies[0];
+    input.addEventListener('input', e => {
+      const q = e.target.value.trim().toLowerCase();
+      for (const row of table.rows) {
+        row.style.display = [...row.cells].slice(1).some(td => td.textContent.toLowerCase().includes(q)) ? '' : 'none';
+      }
+    });
+  </script>
+
+</body>
+</html>
